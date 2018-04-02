@@ -7,30 +7,50 @@ package practice1;
  */
 
 public class Practice1 {
-
-	
-	public static void main(String[] args) {
-			int multi=14;
-		// TODO Auto-generated method stub
-			System.out.println("¹ÎÈ£¾ß Àç¹Õ´Ï ¹ÎÈ£°¡ º¸´Â°Í + ³ªÀÌ + Å°");
-			System.out.println("multi :" + multi);	
-			MinHoWhattheHell(24,180.00);
-			
-	}	
-
 	
 	
-	
-	
-	
-	
-	public static int MinHoWhattheHell(int age, double height) 
+	public static void main(String[] args) 
 	{
-	System.out.println("he`s watching utube+he`s age is "+age *height +" Å°´Â :" + height);	
-	int multi=13;
-	System.out.println("multi :" +multi);	
-	return multi;
+		BankAccount account1=new BankAccount();
+		BankAccount account2=account1;
+	
+		account1.deposit(3000);
+		account1.withdraw(500);
+		check(account1);
 	}
+	
+	public static void check(BankAccount acc)
+	{
+		acc.checkMyBalance();
 		
+	}
+	
+	
 }
+
+class BankAccount
+{
+		int balance=0;
+
+	public int deposit(int amount) 
+	{
+		balance+=amount;
+		return balance;
+	}
+	
+	public void checkMyBalance() 
+	{
+		System.out.println("ÀÜ¾×"+balance);
+		
+	}
+	
+	public int withdraw(int spend) 
+	{
+		balance-=spend;
+		return balance;
+
+	}
+}
+
+
 
