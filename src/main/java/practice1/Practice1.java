@@ -11,26 +11,43 @@ public class Practice1 {
 	
 	public static void main(String[] args) 
 	{
-		BankAccount account1=new BankAccount();
-		BankAccount account2=account1;
-	
-		account1.deposit(3000);
-		account1.withdraw(500);
-		check(account1);
-	}
-	
-	public static void check(BankAccount acc)
-	{
-		acc.checkMyBalance();
+		BankAccount account1=new BankAccount("312-132","956516-12355",10000);
+		BankAccount account2=new BankAccount("213-213","956123-15312",20000);
+		
+		account1.deposit(10000);
+		account1.checkMyBalance();
+		account1.withdraw(4000);
+		account1.checkMyBalance();
+		
+		account2.deposit(5000);
+		account2.checkMyBalance();
+		account2.withdraw(3000);
+		account2.checkMyBalance();
+		
+		
+		
 		
 	}
 	
 	
 }
 
+
+
 class BankAccount
 {
-		int balance=0;
+	
+	String accNumber;
+	String ssNumber;
+	int balance=0;
+
+	public BankAccount(String acc, String ss, int bal)
+	{
+		accNumber=acc;
+		ssNumber=ss;
+		balance=bal;
+	}
+
 
 	public int deposit(int amount) 
 	{
@@ -40,7 +57,9 @@ class BankAccount
 	
 	public void checkMyBalance() 
 	{
-		System.out.println("ภÜพื"+balance);
+		System.out.println("accNumbe : "+accNumber);
+		System.out.println("ssNumber : "+ssNumber);
+		System.out.println("balance  : "+balance);
 		
 	}
 	
@@ -48,8 +67,9 @@ class BankAccount
 	{
 		balance-=spend;
 		return balance;
-
 	}
+	
+	
 }
 
 
